@@ -25,7 +25,7 @@
       padding: 40px 30px;
       background: #1b1b1b;
       border-radius: 16px;
-      box-shadow: 0 0 40px rgba(255, 149, 0, 0.1);
+      box-shadow: 0 0 40px rgba(255, 149, 0, 0.15);
       animation: fadeZoom 0.8s ease-out;
       position: relative;
       z-index: 2;
@@ -81,6 +81,7 @@
       transition: background 0.3s ease;
       text-decoration: none;
       display: inline-block;
+      user-select: none;
     }
 
     .back-btn:hover {
@@ -102,6 +103,7 @@
       height: 100%;
       animation: spin 8s linear infinite;
       opacity: 0.05;
+      fill: #ff9500;
     }
 
     @keyframes spin {
@@ -113,15 +115,15 @@
 <body>
 
   <!-- Animated spatula X in background -->
-  <div class="spatula-x">
-    <svg viewBox="0 0 64 64" fill="#ff9500" xmlns="http://www.w3.org/2000/svg">
+  <div class="spatula-x" aria-hidden="true">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" >
       <rect x="28" y="0" width="8" height="64" rx="2" transform="rotate(45 32 32)" />
       <rect x="28" y="0" width="8" height="64" rx="2" transform="rotate(-45 32 32)" />
     </svg>
   </div>
 
   <!-- Thank you message -->
-  <div class="thankyou-container">
+  <div class="thankyou-container" role="main">
     <h1>✅ Thank you for your order!</h1>
     <p>Your support means the world to us.</p>
     <p>Let us bring bold flavours to your day.</p>
@@ -129,7 +131,7 @@
     <div class="tagline">Hungry? Think Snapbite™</div>
     <div class="snapbite-brand">Snapbite™ — No rules. Just bite. Repeat.</div>
 
-    <a href="https://abgspekfoodie.github.io/Snapbite/" class="back-btn">← Back to Menu</a>
+    <a href="https://abgspekfoodie.github.io/Snapbite/" class="back-btn" role="button" tabindex="0">← Back to Menu</a>
   </div>
 
 </body>
