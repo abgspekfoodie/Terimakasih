@@ -6,10 +6,6 @@
   <title>Thank You — Snapbite™</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       padding: 0;
@@ -21,6 +17,7 @@
       align-items: center;
       min-height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     .thankyou-container {
@@ -28,14 +25,16 @@
       padding: 40px 30px;
       background: #1b1b1b;
       border-radius: 16px;
-      box-shadow: 0 0 40px rgba(255, 149, 0, 0.08);
-      animation: fadeZoom 0.7s ease-out;
+      box-shadow: 0 0 40px rgba(255, 149, 0, 0.1);
+      animation: fadeZoom 0.8s ease-out;
+      position: relative;
+      z-index: 2;
     }
 
     @keyframes fadeZoom {
       from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.92);
       }
       to {
         opacity: 1;
@@ -44,22 +43,22 @@
     }
 
     .thankyou-container h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #ff9500;
       margin-bottom: 1rem;
     }
 
     .thankyou-container p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: #ddd;
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
     }
 
     .tagline {
       margin-top: 2rem;
-      font-weight: 600;
+      font-weight: bold;
       color: #ff9500;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .snapbite-brand {
@@ -87,9 +86,41 @@
     .back-btn:hover {
       background: #e08200;
     }
+
+    .spatula-x {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .spatula-x svg {
+      width: 100%;
+      height: 100%;
+      animation: spin 8s linear infinite;
+      opacity: 0.05;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Animated spatula X in background -->
+  <div class="spatula-x">
+    <svg viewBox="0 0 64 64" fill="#ff9500" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="0" width="8" height="64" rx="2" transform="rotate(45 32 32)" />
+      <rect x="28" y="0" width="8" height="64" rx="2" transform="rotate(-45 32 32)" />
+    </svg>
+  </div>
+
+  <!-- Thank you message -->
   <div class="thankyou-container">
     <h1>✅ Thank you for your order!</h1>
     <p>Your support means the world to us.</p>
@@ -98,7 +129,8 @@
     <div class="tagline">Hungry? Think Snapbite™</div>
     <div class="snapbite-brand">Snapbite™ — No rules. Just bite. Repeat.</div>
 
-    <a href="/index.html" class="back-btn">← Back to Menu</a>
+    <a href="index.html" class="back-btn">← Back to Menu</a>
   </div>
+
 </body>
 </html>
